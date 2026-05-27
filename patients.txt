@@ -1,0 +1,4 @@
+1001|Aanya Sharma|25|Malaria
+1002|Aryan Khanna|50|Cancer
+1003|Deepak Rao|31|Flu
+1005|sahana reddy|28|Dengue
