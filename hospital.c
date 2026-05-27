@@ -15,7 +15,7 @@ void searchPatient();
 void updatePatient();
 void deletePatient();
 
-/* Read a full line, strip \r and \n (handles both Windows and Linux) */
+
 int readLine(char *buf, int size) {
     if (!fgets(buf, size, stdin)) return 0;
     buf[strcspn(buf, "\r\n")] = '\0';
@@ -182,7 +182,7 @@ void updatePatient() {
         printf("Invalid ID!\n"); return;
     }
 
-    /* Read new values BEFORE copying, so we don't block inside the loop */
+    
     /* First pass: check if patient exists */
     while (fscanf(fp, "%d|%99[^|]|%d|%99[^\n]",
            &p.id, p.name, &p.age, p.disease) == 4) {
@@ -261,7 +261,7 @@ void deletePatient() {
            &p.id, p.name, &p.age, p.disease) == 4) {
         if (p.id == id) {
             found = 1;
-            /* skip this record - don't write to temp */
+            
         } else {
             fprintf(temp, "%d|%s|%d|%s\n", p.id, p.name, p.age, p.disease);
         }
